@@ -3,4 +3,190 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+}
+.home .navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #000;
+}
+.home .navbar .img-amz {
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 5px;
+}
+.home .navbar .img-amz img {
+  width: 100px;
+}
+.home .navbar .search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  max-width: 750px;
+  height: 40px;
+  background-color: #fad14c;
+  border-radius: 5px;
+}
+.home .navbar .search-form input {
+  width: 95%;
+  height: 100%;
+  outline-color: #fab20b;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+.home .navbar .search-form button {
+  width: 5%;
+  height: 100%;
+  z-index: 999;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.home .navbar .nav-item-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.home .navbar .nav-item-right .left {
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.home .navbar .nav-item-right .basket {
+  padding: 5px;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.home .navbar .nav-item-right .basket .left-basket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  inset: 0;
+}
+.home .navbar .nav-item-right .basket .left-basket img {
+  width: 50px;
+}
+.home .navbar .nav-item-right .basket .left-basket .number {
+  position: absolute;
+  left: 55%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  color: #fab20b;
+}
+.home .cards-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+.home .cards-section .card-item {
+  width: 270px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+}
+.home .cards-section .card-item .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.home .cards-section .card-item .top .image-card {
+  width: 100%;
+}
+.home .cards-section .card-item .top .image-card img {
+  width: 100%;
+  height: 170px;
+}
+.home .cards-section .card-item .top .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.home .cards-section .card-item .top .content .start-score {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.home .cards-section .card-item .top .content .start-score a {
+  text-decoration: none;
+}
+.home .cards-section .card-item .top .content .start-score img {
+  width: 100px;
+}
+.home .cards-section .card-item .top .content .select-input-parent .numbers {
+  outline-color: #fad14c;
+  border-color: rgba(0, 0, 0, 0.2);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.home .cards-section .card-item .top .content .select-input-parent .numbers:focus {
+  outline-color: #fad14c;
+}
+.home .cards-section .card-item .add-to-cart-btn {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #ffc53d;
+  transition: all ease 0.3s;
+}
+
+/*************************start navbar****************************/
+.navbar .nav-item-right .basket:hover,
+.navbar .nav-item-right .left:hover {
+  border-color: #fff;
+}
+
+.navbar .img-amz:hover {
+  border-color: #fff;
+}
+
+/*************************end navbar******************************/
+/*************************start cards-section******************************/
+.cards-section .card-item button:hover {
+  opacity: 0.7;
+}
+
+/*************************end cards-section******************************/
+/*************************end amazone style******************************/ 
+/*************************start checkout style******************************/ 
+.checkout {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  inset: 0;
 }/*# sourceMappingURL=style.css.map */

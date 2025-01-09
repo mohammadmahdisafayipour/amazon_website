@@ -1,6 +1,237 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+
+
+    .navbar {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        padding: 10px 15px;
+        background-color: #000;
+
+        .img-amz {
+            border: 1px solid #000;
+            border-radius: 2px;
+            padding: 5px;
+
+            img {
+                width: 100px;
+            }
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 750px;
+            max-width: 750px;
+            height: 40px;
+            background-color: #fad14c;
+            border-radius: 5px;
+
+            input {
+                width: 95%;
+                height: 100%;
+                outline-color: #fab20b;
+                border: none;
+                border-radius: 5px;
+                font-size: 20px;
+                padding: 0 10px;
+            }
+
+            button {
+                width: 5%;
+                height: 100%;
+                z-index: 999;
+                background: none;
+                border: none;
+                outline: none;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .nav-item-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            // background-color: red;
+            // width: 15%;
+            .left {
+                // width: 50%;
+                padding: 5px;
+                text-decoration: none;
+                color: #fff;
+                border: 1px solid #000;
+                border-radius: 2px;
+            }
+
+            .basket {
+                padding: 5px;
+                color: #fff;
+                display: flex;
+                align-items: flex-end;
+                text-decoration: none;
+                border: 1px solid #000;
+                border-radius: 2px;
+
+                .left-basket {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    inset: 0;
+
+                    img {
+                        width: 50px;
+                    }
+
+                    .number {
+                        position: absolute;
+                        left: 55%;
+                        top: 20%;
+                        transform: translate(-50%, -50%);
+                        color: #fab20b;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .cards-section {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        margin-top: 30px;
+        padding:  0 10px;
+
+        .card-item {
+            width: 270px;
+            padding: 15px 20px;
+            // background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 50px;
+            border: 1px solid #0001;
+
+            .top {
+                // width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+
+                .image-card {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 170px;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .start-score {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        a{
+                            text-decoration: none;
+                        }
+
+                        img {
+                            width: 100px;
+                        }
+                    }
+
+                    .select-input-parent{
+                        .numbers{
+                            outline-color:#fad14c;
+                            border-color: #0003;
+                            padding: 2px 4px;
+                            border-radius: 4px;
+                        }
+                        .numbers:focus{
+                            outline-color:#fad14c;
+                        }
+                        
+                    }
+                }
+
+            }
+
+            .add-to-cart-btn{
+                border: none;
+                outline: none;
+                width: 100%;
+                padding: 10px 0;
+                cursor: pointer;
+                border-radius: 15px;
+                background-color: #ffc53d;
+                transition: all ease .3s;
+            }
+        }
+    }
+}
+
+
+/*************************start navbar****************************/
+
+.navbar .nav-item-right .basket:hover,
+.navbar .nav-item-right .left:hover {
+    border-color: #fff;
+}
+
+.navbar .img-amz:hover {
+    border-color: #fff;
+}
+
+/*************************end navbar******************************/
+
+
+
+/*************************start cards-section******************************/
+
+.cards-section .card-item button:hover{
+    opacity: .7;
+}
+
+/*************************end cards-section******************************/
+
+
+
+/*************************end amazone style******************************//*# sourceMappingURL=style.css.map */
+
+
+
+/*************************start checkout style******************************//*# sourceMappingURL=style.css.map */
+.checkout{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    inset: 0;
+  }
