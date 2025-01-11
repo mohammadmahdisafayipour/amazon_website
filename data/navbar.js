@@ -17,7 +17,7 @@ export function navbarView() {
                     <p>&Orders</p>
                 </a>
 
-                <a href="#" class="basket">
+                <a href="checkout.html" class="basket">
                     <div class="left-basket">
                         <span class="number">${cartQuantity()}</span>
                         <img src="images/icons/cart-icon.png" alt="">

@@ -1,5 +1,5 @@
 import { products } from "../data/products.js";
-import { cart } from "../data/cart.js";
+import { cart,addToCart } from "../data/cart.js";
 import { navbarView } from "../data/navbar.js";
 
 export function renderAmazonPage() {
@@ -53,27 +53,9 @@ export function renderAmazonPage() {
             const productId = btn.dataset.productId
             let value = Number(document.querySelector(`.js-selector-${productId}`).value)
 
-            let matchingProduct;
-            cart.forEach(cartItem => {
-                if (cartItem.productId == productId) {
-                    matchingProduct = cartItem
-                }
-            })
-            if (matchingProduct) {
-                matchingProduct.quantity += value
-            }
-            else {
-                cart.push(
-                    {
-                        productId: productId,
-                        quantity: value
-                    }
-                )
-
-            }
+            addToCart(productId,value)
 
             navbarView()
-            console.log(value)
         })
     });
 
