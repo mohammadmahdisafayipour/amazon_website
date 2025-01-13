@@ -113,10 +113,56 @@
   color: rgb(177, 39, 4);
   font-weight: 700;
   margin-bottom: 5px;
+  /* display: flex;align-items: center;justify-content: center; */
 }
 
-.product-quantity .link-primary {
-  margin-left: 3px;
+.product-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.product-quantity .delete-quantity-link {
+  /* margin-left: 5px; */
+}
+
+.product-quantity .quantity-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-quantity .save-update-quantity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  /* margin-left: 4px; */
+  display: none;
+}
+.save-update-quantity input{
+  width: 30px;
+}
+.save-update-quantity button{
+  background: none;
+  border: 0;
+  outline: 0;
+  color: rgb(6, 124, 249);
+  font-size: 17px;
+}
+.save-update-quantity button:hover{
+  color: rgb(255, 96, 4);
+}
+
+
+.save-update-quantity.active{
+  display: flex;
+}
+.update-quantity-link.active{
+  display: flex;
+}
+.update-quantity-link{
+  display: none;
 }
 
 @media (max-width: 1000px) {
