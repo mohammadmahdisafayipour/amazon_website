@@ -3,9 +3,15 @@ import { products } from "../data/products.js";
 import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
 import { deliveryOptions } from "../data/deliveryOptions.js";
+import { navCheckOutHTML } from "../data/navbar.js"
+
 
 
 function orderSummary() {
+
+    document.querySelector(".checkout-header").innerHTML = navCheckOutHTML()
+
+
     let ordersCartHTML = ''
 
 
@@ -91,6 +97,8 @@ function orderSummary() {
             let container = document.querySelector(`.cart-order-js-${productId}`)
             removeCart(productId)
             container.remove()
+            orderSummary()
+            paymentSummary()
         })
     })
 
@@ -113,6 +121,7 @@ function orderSummary() {
                 document.querySelector(`.update-js-${productId}`).classList.toggle("active")
                 updateCartQuantity(productId)
                 orderSummary()
+                paymentSummary()
             })
 
         })
@@ -160,6 +169,7 @@ function orderSummary() {
             const { productId, deliveryOptionId } = element.dataset
             updateDeliveryOptions(productId, deliveryOptionId)
             orderSummary()
+            paymentSummary()
         })
 
     });
@@ -167,3 +177,67 @@ function orderSummary() {
 }
 
 orderSummary()
+
+function paymentSummary() {
+
+    let productPriceCents = 0
+    let shippingPriceCents = 0
+    cart.forEach(cartItem => {
+        let matchingProduct;
+        products.forEach(product => {
+            if (cartItem.productId == product.id) {
+                matchingProduct = product
+            }
+        });
+        productPriceCents += matchingProduct.priceCents * cartItem.quantity;
+
+        let deliveryOptionMatch;
+        deliveryOptions.forEach(deliveryOption => {
+            if (cartItem.deliveryOptionID == deliveryOption.id) {
+                deliveryOptionMatch = deliveryOption
+            }
+        })
+        shippingPriceCents += deliveryOptionMatch.priceCents
+    });
+
+    const totalBeforeTax = productPriceCents + shippingPriceCents
+    const tax = totalBeforeTax * 0.1
+    const orderTotal = tax + totalBeforeTax
+
+
+    let paymentSummaryHTML = `
+  <div class="payment-summary-title">
+                    Order Summary
+                </div>
+
+                <div class="payment-summary-row">
+                    <div>Items (${cart.length}):</div>
+                    <div class="payment-summary-money">$${(productPriceCents/100).toFixed(2)}</div>
+                </div>
+
+                <div class="payment-summary-row">
+                    <div>Shipping &amp; handling:</div>
+                    <div class="payment-summary-money">$${(shippingPriceCents/100).toFixed(2)}</div>
+                </div>
+
+                <div class="payment-summary-row subtotal-row">
+                    <div>Total before tax:</div>
+                    <div class="payment-summary-money">$${(totalBeforeTax/100).toFixed(2)}</div>
+                </div>
+
+                <div class="payment-summary-row">
+                    <div>Estimated tax (10%):</div>
+                    <div class="payment-summary-money">$${(tax/100).toFixed(2)}</div>
+                </div>
+
+                <div class="payment-summary-row total-row">
+                    <div>Order total:</div>
+                    <div class="payment-summary-money">$${(orderTotal/100).toFixed(2)}</div>
+                </div>
+
+                <button class="place-order-button button-primary">
+            Place your order
+          </button>`
+    document.querySelector('.payment-summary').innerHTML = paymentSummaryHTML
+}
+paymentSummary()
