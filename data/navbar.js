@@ -56,5 +56,6 @@ export function navCheckOutHTML() {
                 <img src="images/icons/checkout-lock-icon.png">
             </div>
         </div>`
-    return navCheckoutHTML
+
+    document.querySelector(".checkout-header").innerHTML = navCheckoutHTML
 }
