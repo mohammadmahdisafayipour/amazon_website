@@ -1,4 +1,4 @@
-import { products } from "../data/products.js";
+import { products, loadProductXML } from "../data/products.js";
 import { cart, addToCart } from "../data/cart.js";
 import { navbarView } from "../data/navbar.js";
 
@@ -17,10 +17,10 @@ export function renderAmazonPage() {
                 <div class="content">
                 <p>${product.name}</p>
                 <div class="start-score">
-                <img src="images/ratings/rating-${product.rating.stars * 10}.png" alt="">
+                <img src="images/ratings/rating-${product.get_stars()}.png" alt="">
                 <a href="#" class="score-start">127</a>
                 </div>
-                <p class="price">$${(product.priceCents / 100).toFixed(2)}</p>
+                <p class="price">$${product.get_price()}</p>
                 
                 <div class="select-input-parent">
                 <select name="number" id="number" class="numbers js-selector-${product.id}">
@@ -35,6 +35,9 @@ export function renderAmazonPage() {
                 <option value="9">9</option>
                 <option value="10">10</option>
                 </select>
+
+                ${product.extraInfoHtml()}
+
                 </div>
                 </div>
                 </div>
@@ -63,5 +66,4 @@ export function renderAmazonPage() {
     navbarView()
 
 }
-
-renderAmazonPage()
+loadProductXML(renderAmazonPage)
