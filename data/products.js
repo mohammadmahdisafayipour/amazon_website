@@ -45,6 +45,10 @@ class Clothing extends Product {
 
 export let products = [];
 
+// export function loadProductFetch() {
+
+// }
+
 export function loadProductXML(func) {
     const xhr = new XMLHttpRequest()
     xhr.addEventListener("load", () => {
