@@ -16,7 +16,6 @@ export function paymentSummary() {
         let matchingProduct = getProduct(cartItem.productId)
 
         productPriceCents += matchingProduct.priceCents * cartItem.quantity;
-
         let deliveryOptionMatch = getDeliveryOption(cartItem.deliveryOptionID)
 
 

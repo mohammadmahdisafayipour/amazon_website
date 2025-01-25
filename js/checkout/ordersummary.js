@@ -19,20 +19,17 @@ export function orderSummary() {
             }
         })
 
-        const deliveryOptionId = cartItem.deliveryOptionID
-
+  
+        
         let deliveryOption1;
         deliveryOptions.forEach(option => {
-            if (option.id === deliveryOptionId) {
+            if (option.id === cartItem.deliveryOptionID) {
                 deliveryOption1 = option
+                
             }
         })
-
         const today = dayjs()
-        const deliveryDate = today.add(
-            deliveryOption1.deliveryDays, 'days'
-
-        );
+        const deliveryDate = today.add(deliveryOption1.deliveryDays,'days');
 
         const dateString = deliveryDate.format('dddd, MMMM D')
 
